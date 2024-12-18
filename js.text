@@ -1,0 +1,223 @@
+
+
+ /*
+    In JavaScript, variables are containers for storing data values. You can declare variables using three keywords: var, let, and const.
+    
+    var:
+    Function-scoped.
+    Can be redeclared and updated or re-initialized.
+
+    let:
+    Block-scoped.
+    Cannot be redeclared in the same scope but can be updated.
+    
+    const:
+    Block-scoped.
+    Must be initialized during declaration and cannot be reassigned.
+
+    Hoisting:
+    Variables declared with var are hoisted and initialized as undefined.
+    Variables declared with let and const are hoisted but not initialized (temporal dead zone).
+
+    The Temporal Dead Zone (TDZ) is the time period between entering the scope where a variable is declared and the point where it is initialized. During this period, the variable exists but is not accessible, and attempting to access it results in a ReferenceError.
+
+    Why TDZ Exists:
+    It prevents accessing variables before they are declared and initialized, ensuring safer and more predictable code.
+
+    For variables declared with var, since it is initialized with undefined value during declaration,due to the hoisting behaviour we can have access to the var where ever in the scope it is declared ,hence if we get access to the variable and it has undefined value stored in it,it will cause may problems within a lengthy code therefore it is better to use either let or const since they throw a reference error instead.
+    Variables Declared with var:
+    var does not have a TDZ.
+    It is hoisted and initialized as undefined, so accessing it before declaration does not throw an error but may lead to unexpected results
+
+    // Declaration - A variable is declared --> let a;
+    // var a const a(Syntax error const must be assigned with a value during declaration)
+
+    //Definition - A variable is declared and assigned a value to it (let a = 3 --> Declaration + Definition)
+    //Initialization - A variable is declared and assigned a value to it either the same line or later (let a; a = 5 --> initialization)
+    //*/ 
+
+     What is Runtime?
+      Definition: Runtime refers to the period when a program is actively being executed. This is when the code is running and performing tasks.
+      Key Characteristics:
+      The program interacts with the operating system, memory, and external resources.
+      Any dynamic behavior of the program, like user input, API requests, or file operations, occurs during runtime.
+
+      What is Compile Time?
+      Definition: Compile time is the phase where the source code is translated into machine code or bytecode, depending on the language. For JavaScript (an interpreted language), this step is handled internally by the JavaScript engine.
+      Key Characteristics:
+      Errors like syntax issues or invalid references are typically caught at this stage.
+      JavaScript doesn’t have a separate compilation phase like compiled languages (e.g., C++), but engines like V8 do some just-in-time (JIT) compilation during execution.
+
+      What is a Runtime Error?
+      Definition: A runtime error occurs during the execution of the program. These errors are usually caused by invalid operations or unexpected conditions at runtime.
+      Common Causes:
+      Accessing undefined variables or properties.
+      Dividing by zero (though JavaScript handles this as Infinity).
+      Invalid operations on data types.
+      Network or file operation failures.
+
+
+     What is a Compile-Time Error?
+          Definition: A compile-time error occurs during the compilation phase (before the program runs). These errors are due to syntax violations, undeclared variables, or other code issues that prevent the program from being converted into executable code.
+          Common Causes:
+          Syntax errors (missing semicolons, mismatched braces).
+          Type errors in strictly typed languages.
+          Missing or incorrect imports.
+
+JavaScript Specific Notes
+JavaScript is interpreted, so compile-time errors are detected when the interpreter parses the code before executing it.
+In JavaScript, many errors only show up at runtime because variables can be declared without strict typing.
+
+Runtime is when the program is running and performing tasks.
+Compile Time is when the code is being prepared for execution.
+Runtime Errors occur during execution, often due to dynamic or unforeseen issues.
+Compile-Time Errors occur before execution, often due to syntax or structural issues in the code.
+
+Interpreted languages execute code directly without a separate compilation step.
+They are more flexible but typically slower than compiled languages, though modern JIT compilation (as in JavaScript) helps bridge the performance gap.
+
+When we talk about dynamic typing and how a variable type can change at runtime, we are referring to type conversion.
+
+Dynamic Typing and Type Conversion in Interpreted Languages (like JavaScript):
+1. Dynamic Typing:
+In dynamically typed languages like JavaScript, the type of a variable is determined at runtime, not at declaration.
+Unlike statically typed languages (like C++ or Java), where the type of a variable is explicitly defined at compile-time, in JavaScript, you can reassign different types of values to a variable throughout the execution of the program.
+
+
+JavaScript has dynamic typing, meaning variables can hold values of any type, which can change at runtime. It provides the following data types:
+
+1. Primitive Data Types
+Primitive data types are immutable and represent a single value. There are 7 primitive types:
+
+Number:
+
+Represents both integers and floating-point numbers.
+
+string : combination of multiple characters enclosed in '' or "" or template literals ``
+
+bigInt 
+boolean
+null
+undefined
+symbol
+
+Non-Primitive data types
+Non-primitive types can hold collections of values or more complex entities.
+arrays : A special type of object used to store ordered lists of values.
+
+objects : Represents key-value pairs or collections of properties and methods.
+
+functions : Functions are objects in JavaScript with callable code.
+
+Date : Represents date and time.
+
+
+JS Operators
+JavaScript provides a variety of operators to perform operations on data. Operators are symbols that perform specific actions, such as arithmetic, comparison, logical operations, etc.
+
+1. Arithmetic Operators
+Used for basic mathematical operations.
+
+Operator	Description	Example
++	Addition	a + b
+-	Subtraction	a - b
+*	Multiplication	a * b
+/	Division	a / b
+%	Modulus (remainder)	a % b
+++	Increment	a++
+--	Decrement	a--
+
+ Assignment Operators
+Used to assign values to variables.
+
+Operator	Description	Example
+=	Assign value	a = 5
++=	Add and assign	a += 2
+-=	Subtract and assign	a -= 2
+*=	Multiply and assign	a *= 2
+/=	Divide and assign	a /= 2
+%=	Modulus and assign	a %= 2
+
+Comparison Operators
+Used to compare values.
+
+Operator	Description	Example
+==	Equal to	a == b
+===	Strict equal to	a === b
+!=	Not equal to	a != b
+!==	Strict not equal to	a !== b
+>	Greater than	a > b
+<	Less than	a < b
+>=	Greater than or equal to	a >= b
+<=	Less than or equal to	a <= b
+4. Logical Operators
+Used to perform logical operations.
+
+Operator	Description	Example
+&&	Logical AND	a && b
+`		`
+!	Logical NOT	!a
+5. Bitwise Operators
+Operate on bits and perform bit-level operations.
+
+Operator	Description	Example
+&	Bitwise AND	a & b
+`	`	Bitwise OR
+^	Bitwise XOR	a ^ b
+~	Bitwise NOT	~a
+<<	Left shift	a << 2
+>>	Right shift	a >> 2
+>>>	Unsigned right shift	a >>> 2
+6. Conditional (Ternary) Operator
+Used to perform a conditional operation.
+
+Operator	Description	Example
+a ? b : c	Ternary operator	a ? b : c
+javascript
+Copy code
+let age = 18;
+let status = (age >= 18) ? "Adult" : "Minor";
+7. Unary Operators
+Operate on a single operand.
+
+Operator	Description	Example
++	Unary plus	+a
+-	Unary minus	-a
+++	Increment	++a
+--	Decrement	--a
+!	Logical NOT	!a
+typeof	Typeof	typeof a
+8. Type Operators
+Used to check or change the type of a variable.
+
+Operator	Description	Example
+typeof	Returns the type of a value	typeof a
+instanceof	Checks if an object is an instance of a constructor	a instanceof Date
+9. Equality Operators
+Used for comparison of values.
+
+Operator	Description	Example
+==	Loose equality	a == b
+===	Strict equality	a === b
+!=	Loose inequality	a != b
+!==	Strict inequality	a !== b
+10. Delete Operator
+Deletes properties from an object.
+
+Operator	Description	Example
+delete	Deletes a property	delete obj.property
+11. Comma Operator
+Evaluates multiple expressions, returning the last one.
+
+Operator	Description	Example
+,	Comma operator	a = (b, c)
+12. Spread Operator (...)
+Used to spread elements of arrays or objects.
+
+Operator	Description	Example
+...	Spread operator	[...a, b]
+13. instanceof Operator
+Checks if an object is an instance of a particular class.
+
+Operator	Description	Example
+instanceof	Checks for instance	obj instanceof Date

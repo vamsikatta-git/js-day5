@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+  let calculateAgain = true;
+ while(calculateAgain)
+ {
+      let a = Number(prompt("Enter first number :"));
+      let b = Number(prompt("Enter second number :"));
+      let  operator = prompt("Enter an operator(+,-,/,x,%)")
+  switch(operator)
+   {
+    case '+': alert(`${a} + ${b} = ${a+b}`);
+    break;
+    case '-': alert(`${a} - ${b} = ${a-b}`);
+    break;
+    case 'x': alert(`${a} x ${b} = ${a*b}`);
+    break;
+    case '/': alert(`${a} / ${b} = ${a/b}`);
+    break;
+    case '%': alert(`${a} % ${b} = ${a%b}`);
+    break;
+    default:
+      alert("Enter a valid operator");
+   }
+   const calc = prompt("Wanna calculate again ? (Y/N)");
+   switch(calc)
+   {
+    case 'Y':calculateAgain = true;
+    a = "";
+    b = "";
+    operator = "";
+    break;
+    case 'N':calculateAgain = false;
+    break;
+    default:
+      alert("Enter only Y/N !");
+      break;
+   }
+ }
+  </script>
+</body>
+</html>

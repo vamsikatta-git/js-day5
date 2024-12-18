@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  console.log(a) // undefined ; due to hoisting,execution continues without error
+  var a = 6;
+  //console.log(b); //Uncaught ReferenceError: Cannot access 'b' before initialization,since JavaScript has a single main thread for executing code, meaning it can only perform one task at a time in its execution context,the execution stops here since an error occurred
+  //This design ensures simplicity and avoids issues like race conditions in multi-threaded environments.
+  const b = 8;
+  console.log(b)
+  let y;
+  y=30;
+  console.log(y)
+  
+  </script>
+</body>
+</html>
